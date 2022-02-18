@@ -31,13 +31,19 @@ function generatePassword() {
 }
 
 // Write password to the #password input
-function writePassword() {
+let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numeric = "1234567890";
+let specialCharacters = "!@#$%^&*"
+let specialCharacters = []
+let finalPassword = '';
 
+function writePassword() {
   var password = generatePassword()
   var passwordText = document.querySelector("#password").value;
   var value = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$*&^%"
   passwordText.value = password;
-  for(vari=0; i <=password; i++) {
+  for(var i=0; i <=password; i++) {
     password = passwordText + value.charAt(Math.floor(Math.random() * Math.floor(value.length-1)));
   }
 }
