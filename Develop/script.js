@@ -13,18 +13,22 @@ function generatePassword() {
   }
   
   //password character confirmations
-  var lowercase = confirm("Would you like lowercase characters?")
-  console.log(lowercase)
-  var uppercase = confirm("Would you like uppercase characters?")
-  console.log(uppercase)
-  var numeric = confirm("Would you like numeric characters?")
-  console.log(numeric)
-  var specialCharacters = confirm("Would you like special characters?")
-  console.log(specialCharacters)
+  var lower = confirm("Would you like lowercase characters?")
+  console.log(lower)
+  var upper = confirm("Would you like uppercase characters?")
+  console.log(upper)
+  var numbers = confirm("Would you like numeric characters?")
+  console.log(numbers)
+  var characters = confirm("Would you like special characters?")
+  console.log(characters)
   
-  if (lowercase === false && uppercase === false) {
+  if (lower === false && upper === false && numbers === false && characters === false) {
     alert ("Please select at least one option.")
     return
+  } 
+  if (numbers === true){
+    possibleCharacters = possibleCharacters += numbers
+    specialCharacters = specialCharacters += numeric
   }
 
   return "passwordString"
@@ -35,7 +39,7 @@ let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numeric = "1234567890";
 let specialCharacters = "!@#$%^&*"
-let specialCharacters = []
+let possibleCharacters = []
 let finalPassword = '';
 
 function writePassword() {
